@@ -1,0 +1,17 @@
+{
+  "name": "postgres-connector",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "database.hostname": "postgres",
+    "database.port": "5432",
+    "database.user": "repl_user",
+    "database.password": "repl_password",
+    "database.dbname": "bigdata",
+    "database.server.name": "postgres.bigdata.cdc",
+    "plugin.name": "pgoutput",
+    "table.include.list": "public.teste",
+    "publication.name": "dbz_publication",
+    "publication.autocreate.mode": "disabled",
+    "snapshot.mode": "initial"
+  }
+}

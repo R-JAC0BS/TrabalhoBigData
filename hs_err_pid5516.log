@@ -1,0 +1,234 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 268435456 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3600), pid=5516, tid=10520
+#
+# JRE version:  (21.0.3+7) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (21.0.3+7-LTS-152, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -XX:+IgnoreUnrecognizedVMOptions --add-opens=jdk.proxy2/jdk.proxy2=ALL-UNNAMED --add-exports=java.rmi/sun.rmi.registry=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-exports=java.security.jgss/sun.security.krb5=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.text=ALL-UNNAMED --add-opens=java.base/java.time=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.locks=ALL-UNNAMED -Dlog.file=C:\Users\Rober\Desktop\Nova pasta\venv\Lib\site-packages\pyflink\log/flink-Rober-python-DESKTOP-98QVCP5.log -Dlog4j.configuration=C:\Users\Rober\Desktop\Nova pasta\venv\Lib\site-packages\pyflink\conf/log4j-cli.properties -Dlog4j.configurationFile=C:\Users\Rober\Desktop\Nova pasta\venv\Lib\site-packages\pyflink\conf/log4j-cli.properties -Dlogback.configurationFile=C:\Users\Rober\Desktop\Nova pasta\venv\Lib\site-packages\pyflink\conf/logback.xml org.apache.flink.client.python.PythonGatewayServer
+
+Host: Intel(R) Core(TM) i5-9400F CPU @ 2.90GHz, 6 cores, 15G,  Windows 10 , 64 bit Build 19041 (10.0.19041.5915)
+Time: Thu Apr 23 23:09:42 2026 Hora oficial do Brasil elapsed time: 0.059685 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002324c21db60):  JavaThread "Unknown thread" [_thread_in_vm, id=10520, stack(0x0000006b76300000,0x0000006b76400000) (1024K)]
+
+Stack: [0x0000006b76300000,0x0000006b76400000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6c63b9]
+V  [jvm.dll+0x84fa11]
+V  [jvm.dll+0x851f3e]
+V  [jvm.dll+0x852613]
+V  [jvm.dll+0x27cd46]
+V  [jvm.dll+0x6c2b55]
+V  [jvm.dll+0x6b76da]
+V  [jvm.dll+0x35051a]
+V  [jvm.dll+0x358176]
+V  [jvm.dll+0x3aa84e]
+V  [jvm.dll+0x3aaaf8]
+V  [jvm.dll+0x32491c]
+V  [jvm.dll+0x32547b]
+V  [jvm.dll+0x818f69]
+V  [jvm.dll+0x3b7771]
+V  [jvm.dll+0x802358]
+V  [jvm.dll+0x44c7ce]
+V  [jvm.dll+0x44e2a1]
+C  [jli.dll+0x52a3]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17374]
+C  [ntdll.dll+0x4cc91]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffe49781b88, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x000002324e4a1820 WorkerThread "GC Thread#0"                     [id=268, stack(0x0000006b76400000,0x0000006b76500000) (1024K)]
+  0x000002324e4b3510 ConcurrentGCThread "G1 Main Marker"            [id=15152, stack(0x0000006b76500000,0x0000006b76600000) (1024K)]
+  0x000002324e4b3cc0 WorkerThread "G1 Conc#0"                       [id=10840, stack(0x0000006b76600000,0x0000006b76700000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffe48ef7077]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007ffe497f2ea8] Heap_lock - owner thread: 0x000002324c21db60
+
+Heap address: 0x0000000701000000, size: 4080 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 16 size 48 Howl #buckets 8 coarsen threshold 3686 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 4096
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000701000000, 0x0000000800000000)
+  region size 2048K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffe492de669]
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.032 Loaded shared library C:\Program Files\Java\jdk-21\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff602b20000 - 0x00007ff602b30000 	C:\Program Files\Java\jdk-21\bin\java.exe
+0x00007ffe9ca90000 - 0x00007ffe9cc88000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffe9b190000 - 0x00007ffe9b252000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffe9a120000 - 0x00007ffe9a416000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffe9a820000 - 0x00007ffe9a920000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffe6f290000 - 0x00007ffe6f2a9000 	C:\Program Files\Java\jdk-21\bin\jli.dll
+0x00007ffe9aba0000 - 0x00007ffe9ac51000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffe9b360000 - 0x00007ffe9b3fe000 	C:\Windows\System32\msvcrt.dll
+0x00007ffe9b2c0000 - 0x00007ffe9b35f000 	C:\Windows\System32\sechost.dll
+0x00007ffe9b070000 - 0x00007ffe9b190000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffe9a920000 - 0x00007ffe9a947000 	C:\Windows\System32\bcrypt.dll
+0x00007ffe6f070000 - 0x00007ffe6f08b000 	C:\Program Files\Java\jdk-21\bin\VCRUNTIME140.dll
+0x00007ffe9c140000 - 0x00007ffe9c2e1000 	C:\Windows\System32\USER32.dll
+0x00007ffe9a420000 - 0x00007ffe9a442000 	C:\Windows\System32\win32u.dll
+0x00007ffe9b460000 - 0x00007ffe9b48b000 	C:\Windows\System32\GDI32.dll
+0x00007ffe86e80000 - 0x00007ffe8711b000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.6456_none_60b8a6cb71f64256\COMCTL32.dll
+0x00007ffe9a450000 - 0x00007ffe9a569000 	C:\Windows\System32\gdi32full.dll
+0x00007ffe9a650000 - 0x00007ffe9a6ed000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffe93c70000 - 0x00007ffe93c7a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffe9ab60000 - 0x00007ffe9ab8f000 	C:\Windows\System32\IMM32.DLL
+0x00007ffe871c0000 - 0x00007ffe871cc000 	C:\Program Files\Java\jdk-21\bin\vcruntime140_1.dll
+0x00007ffe69280000 - 0x00007ffe6930e000 	C:\Program Files\Java\jdk-21\bin\msvcp140.dll
+0x00007ffe48bc0000 - 0x00007ffe498cd000 	C:\Program Files\Java\jdk-21\bin\server\jvm.dll
+0x00007ffe9c9e0000 - 0x00007ffe9ca4b000 	C:\Windows\System32\WS2_32.dll
+0x00007ffe99f80000 - 0x00007ffe99fcb000 	C:\Windows\SYSTEM32\POWRPROF.dll
+0x00007ffe8fc70000 - 0x00007ffe8fc97000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffe99f60000 - 0x00007ffe99f72000 	C:\Windows\SYSTEM32\UMPDC.dll
+0x00007ffe97f70000 - 0x00007ffe97f82000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ffe85270000 - 0x00007ffe8527a000 	C:\Program Files\Java\jdk-21\bin\jimage.dll
+0x00007ffe8f200000 - 0x00007ffe8f401000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ffe85c50000 - 0x00007ffe85c84000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ffe9a5c0000 - 0x00007ffe9a642000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffe6ef70000 - 0x00007ffe6ef8f000 	C:\Program Files\Java\jdk-21\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-21\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.6456_none_60b8a6cb71f64256;C:\Program Files\Java\jdk-21\bin\server
+
+VM Arguments:
+jvm_args: -XX:+IgnoreUnrecognizedVMOptions --add-opens=jdk.proxy2/jdk.proxy2=ALL-UNNAMED --add-exports=java.rmi/sun.rmi.registry=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-exports=java.security.jgss/sun.security.krb5=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.text=ALL-UNNAMED --add-opens=java.base/java.time=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.locks=ALL-UNNAMED -Dlog.file=C:\Users\Rober\Desktop\Nova pasta\venv\Lib\site-packages\pyflink\log/flink-Rober-python-DESKTOP-98QVCP5.log -Dlog4j.configuration=C:\Users\Rober\Desktop\Nova pasta\venv\Lib\site-packages\pyflink\conf/log4j-cli.properties -Dlog4j.configurationFile=C:\Users\Rober\Desktop\Nova pasta\venv\Lib\site-packages\pyflink\conf/log4j-cli.properties -Dlogback.configurationFile=C:\Users\Rober\Desktop\Nova pasta\venv\Lib\site-packages\pyflink\conf/logback.xml 
+java_command: org.apache.flink.client.python.PythonGatewayServer
+java_class_path (initial): C:\Users\Rober\Desktop\Nova pasta\venv\Lib\site-packages\pyflink\lib\flink-cep-2.2.0.jar;C:\Users\Rober\Desktop\Nova pasta\venv\Lib\site-packages\pyflink\lib\flink-connector-files-2.2.0.jar;C:\Users\Rober\Desktop\Nova pasta\venv\Lib\site-packages\pyflink\lib\flink-csv-2.2.0.jar;C:\Users\Rober\Desktop\Nova pasta\venv\Lib\site-packages\pyflink\lib\flink-dist-2.2.0.jar;C:\Users\Rober\Desktop\Nova pasta\venv\Lib\site-packages\pyflink\lib\flink-json-2.2.0.jar;C:\Users\Rober\Desktop\Nova pasta\venv\Lib\site-packages\pyflink\lib\flink-scala_2.12-2.2.0.jar;C:\Users\Rober\Desktop\Nova pasta\venv\Lib\site-packages\pyflink\lib\flink-table-api-java-uber-2.2.0.jar;C:\Users\Rober\Desktop\Nova pasta\venv\Lib\site-packages\pyflink\lib\flink-table-planner-loader-2.2.0.jar;C:\Users\Rober\Desktop\Nova pasta\venv\Lib\site-packages\pyflink\lib\flink-table-runtime-2.2.0.jar;C:\Users\Rober\Desktop\Nova pasta\venv\Lib\site-packages\pyflink\lib\log4j-1.2-api-2.24.3.jar;C:\Users\Rober\Desktop\Nova pasta\venv\Lib\site-packages\pyflink\lib\log4j-api-2.24.3.jar;C:\Users\Rober\Desktop\Nova pasta\venv\Lib\site-packages\pyflink\lib\log4j-core-2.24.3.jar;C:\Users\Rober\Desktop\Nova pasta\venv\Lib\site-packages\pyflink\lib\log4j-layout-template-json-2.24.3.jar;C:\Users\Rober\Desktop\Nova pasta\venv\Lib\site-packages\pyflink\lib\log4j-slf4j-impl-2.24.3.jar;C:\Users\Rober\Desktop\Nova pasta\venv\Lib\site-packages\pyflink\opt\flink-python-2.2.0.jar;;;;
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 6                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+     bool IgnoreUnrecognizedVMOptions              = true                                      {product} {command line}
+   size_t InitialHeapSize                          = 268435456                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4278190080                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5832780                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122912730                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122912730                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 4278190080                             {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-21
+PATH=C:\Users\Rober\Desktop\Nova pasta\venv\Scripts;C:\Python311\Scripts\;C:\Python311\;C:\Python314\Scripts\;C:\Python314\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Java\jdk-21;C:\Program Files\nodejs\node_modules\npm\bin;F:\Git\bin;C:\Users\Rober\AppData\Roaming\nvm;C:\Users\Rober\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Rober\AppData\Roaming\npm;C:\ProgramData\chocolatey\bin;C:\Users\Rober\AppData\Local\Programs\Python\Python312\Scripts;C:\Users\Rober\AppData\Local\Programs\Python\Python312;F:\Downloads\Grandle\gradle-8.8\bin;C:\Program Files\Java\jdk-21\bin;C:\Users\Rober\Desktop\platform-tools;C:\Users\Rober\AppData\Local\Programs\Python\Python312\Scripts;C:\Program Files\Go\bin;C:\Users\Rober\AppData\Local\Programs\Python\Python312\Scripts;C:\msys64\ucrt64\bin;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files\RabbitMQ Server\rabbitmq_server-4.1.1\sbin;F:\Git\cmd;C:\Windows\System32;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Users\Rober\Documents\apache-maven-3.9.11\bin;C:\Program Files\dotnet\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Users\Rober\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\Rober\AppData\Local\Programs\Python\Python313\;C:\Program Files\Java\jdk-21\bin;C:\Users\Rober\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Rober\AppData\Local\spicetify;C:\Program Files\JetBrains\IntelliJ IDEA 2024.1.4\bin;;C:\Users\Rober\Desktop\platform-tools;C:\Users\Rober\AppData\Local\Programs\Python\Python312\Scripts;C:\Users\Rober\go\bin;C:\Users\Rober\AppData\Local\Programs\Python\Python312\Scripts;C:\msys64\ucrt64\bin;C:\Program Files\RabbitMQ Server\rabbitmq_server-4.1.1\sbin;C:\Users\Rober\Videos\flutter\bin;C:\Users\Rober\AppData\Local\Programs\Kiro\bin;C:\Users\Rober\.dotnet\tools;C:\Users\Rober\Documents\dev\flutter\bin;C:\Users\Rober\AppData\Roaming\npm\node_modules\npm\bin;C:\Users\Rober\AppData\Roaming\npm;C:\Users\Rober\AppData\Local\Programs\Antigravity\bin;C:\Users\Rober\AppData\Local\Python\bin;c:\Users\Rober\.antigravity\extensions\ms-python.debugpy-2025.18.0-win32-x64\bundled\scripts\noConfigScripts
+USERNAME=Rober
+LANG=en_US.UTF-8
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
+TMP=C:\Users\Rober\AppData\Local\Temp
+TEMP=C:\Users\Rober\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.5915)
+OS uptime: 0 days 3:16 hours
+Hyper-V role detected
+
+CPU: total 6 (initial active 6) (6 cores per cpu, 1 threads per core) family 6 model 158 stepping 10 microcode 0xea, cx8, cmov, fxsr, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, fma, vzeroupper, clflush, clflushopt, hv, rdtscp, f16c
+Processor Information for all 6 processors :
+  Max Mhz: 2904, Current Mhz: 2904, Mhz Limit: 2904
+
+Memory: 4k page, system-wide physical 16317M (709M free)
+TotalPageFile size 21300M (AvailPageFile size 210M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 56M, peak: 312M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (21.0.3+7-LTS-152) for windows-amd64 JRE (21.0.3+7-LTS-152), built on 2024-03-11T17:42:26Z by "mach5one" with MS VC++ 17.6 (VS2022)
+
+END.
